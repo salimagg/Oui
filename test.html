@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API</title>
+    <script 
+  src="https://code.jquery./com/jquery-3.2.1.min.javascript" 
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorign="anonymous"></script>
+</head>
+<body>
+    <script>
+
+    function process() {
+        var temperature   = document.getElementById('temperature');
+
+        var url     = "http://api.openweathermap.org/data/2.5/weather"; 
+        fetch(url)
+        .then(
+            function(response){
+                response.text()
+                .then(
+                    function(jsonText){
+                        jsonObj = JSON.parse(jsonText);
+
+                        // HERE WE HAVE A JSON OBJECT COMING BACK FROM THE URL 
+
+                        temperature.textContent = jsonObj.temperature;
+
+                    }
+                );
+            }
+        );
+    }
+
+
+</script>
+</body>
+</html>
